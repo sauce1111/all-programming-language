@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+	logicalFilePath="changelog-0.1">
+
+	<changeSet author="author" id="changelog-0.1">
+		<!-- DB Control -->
+		<!-- liquibase 테스트용 table 입니다. 실행 시 아래 테이블이 생성되면 정상 적용 된 상태 입니다. -->
+		<sql>
+			CREATE TABLE `test` (
+			`unique_id` int NOT NULL,
+			`name` varchar(300) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+			PRIMARY KEY (`unique_id`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+		</sql>
+	</changeSet>
+	<changeSet author="phm" id="changelog-0.2">
+		<!-- DB Control -->
+		<!-- liquibase 테스트용 table 입니다. 실행 시 아래 테이블이 생성되면 정상 적용 된 상태 입니다. -->
+		<createTable tableName="phm_board">
+			<column name="board_write_id" type="int" autoIncrement="true">	<!-- 게시판 PK -->
+				<constraints primaryKey="true" />
+			</column>
+			<column name="board_id" type="int">	<!-- 게시판 분류(각자 4개) -->
+				<constraints primaryKey="false" />
+			</column>
+			<column name="board_category" type="int">	<!-- 게시판 분류 -->
+				<constraints primaryKey="false" />
+			</column>
+			<column name="title" type="VARCHAR(128)">
+				<constraints nullable="false" />
+			</column>
+			<column name="content" type="VARCHAR(4000)">
+				<constraints nullable="false" />
+			</column>
+			<column name="write_member_id" type="int">
+				<constraints nullable="false" />
+			</column>
+			<column name="create_dttm" type="varchar(14)">
+				<constraints nullable="false" />
+			</column>
+			<column name="update_dttm" type="varchar(14)">
+				<constraints nullable="false" />
+			</column>
+		</createTable>
+	</changeSet>
+</databaseChangeLog>

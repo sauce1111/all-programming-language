@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+  logicalFilePath="changelog-member">
+
+  <!--회원-->
+  <changeSet author="bryu" id="member.create">
+    <sql>
+      CREATE TABLE member (
+        member_idx       BIGINT       AUTO_INCREMENT       PRIMARY KEY, <!--회원번호-->
+        member_name      VARCHAR(50)                          NOT NULL, <!--회원이름-->
+        login_id         VARCHAR(50)                            UNIQUE, <!--로그인아이디-->
+        login_pw         VARCHAR(200)                                 , <!--로그인암호-->
+        created_date     DATETIME                                     , <!--생성일시-->
+        modified_date    DATETIME                                       <!--수정일시-->
+      )
+      ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    </sql>
+  </changeSet>
+
+  <changeSet author="bryu" id="board.insert.admin">
+    <sql> INSERT INTO member (member_name, login_id) values ('관리자', 'admin') </sql>
+  </changeSet>
+
+
+</databaseChangeLog>

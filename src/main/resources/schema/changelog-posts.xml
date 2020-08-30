@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+  logicalFilePath="changelog-member">
+
+  <!--게시글-->
+  <changeSet author="bryu" id="posts.create">
+    <sql>
+      CREATE TABLE posts (
+        post_idx             BIGINT      AUTO_INCREMENT        PRIMARY KEY, <!--게시글번호-->
+        board_idx            BIGINT                               NOT NULL, <!--게시판번호-->
+        write_member_idx     BIGINT                               NOT NULL, <!--작성회원번호-->
+        title               VARCHAR(200)                                  , <!--제목-->
+        contents               TEXT                                       , <!--내용-->
+        attached_file       VARCHAR(200)                                  , <!--첨부파일-->
+        hits                    INT       DEFAULT 0                       , <!--조회수-->
+        status_code             INT       DEFAULT 0                       , <!--상태코드 0:정상 1:삭제-->
+        created_date        DATETIME                                      , <!--생성일시-->
+        modified_date       DATETIME                                      , <!--수정일시-->
+        deleted_date        DATETIME                                      , <!--삭제일시-->
+
+        FOREIGN KEY(board_idx)        REFERENCES board(board_idx)         ,
+        FOREIGN KEY(write_member_idx) REFERENCES member(member_idx)
+      )
+      ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    </sql>
+  </changeSet>
+
+  <changeSet author="bryu" id="posts.index">
+    <sql>
+      CREATE INDEX idx_posts_1 ON posts(board_idx, created_date)
+    </sql>
+    <sql>
+      CREATE INDEX idx_posts_2 ON posts(board_idx, write_member_idx)
+    </sql>
+  </changeSet>
+
+
+</databaseChangeLog>

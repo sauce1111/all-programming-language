@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      :class="{ 'theme-dark': dark }" x-data="data()" lang="en"
+>
 <head>
   <!-- commonResources -->
   <resource th:replace="include/commonResources :: commonResources" th:remove="tag"/>

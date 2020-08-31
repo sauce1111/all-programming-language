@@ -46,6 +46,8 @@ dependencies {
     implementation 'com.querydsl:querydsl-jpa'
     compile group: 'com.querydsl', name: 'querydsl-sql', version: '4.2.1'
 
+    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5', version: '3.0.4.RELEASE'
+
     //인텔리제이 2020.x 부터 annotationProcessor를 사용하자
     annotationProcessor(
             "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jpa",

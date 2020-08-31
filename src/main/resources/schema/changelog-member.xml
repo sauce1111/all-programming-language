@@ -6,13 +6,13 @@
   logicalFilePath="changelog-member">
 
   <!--회원-->
-  <changeSet author="bryu" id="member.create">
+  <changeSet author="bryu" id="member.create.200901">
     <sql>
       CREATE TABLE member (
         member_idx       BIGINT       AUTO_INCREMENT       PRIMARY KEY, <!--회원번호-->
         member_name      VARCHAR(50)                          NOT NULL, <!--회원이름-->
-        login_id         VARCHAR(50)                            UNIQUE, <!--로그인아이디-->
-        login_pw         VARCHAR(200)                                 , <!--로그인암호-->
+        email            VARCHAR(50)                                  , <!--이메일-->
+        role             VARCHAR(50)                                  , <!--권한-->
         created_date     DATETIME                                     , <!--생성일시-->
         modified_date    DATETIME                                       <!--수정일시-->
       )
@@ -20,8 +20,9 @@
     </sql>
   </changeSet>
 
-  <changeSet author="bryu" id="board.insert.admin">
-    <sql> INSERT INTO member (member_name, login_id) values ('관리자', 'admin') </sql>
+  <changeSet author="bryu" id="member.insert.200901">
+    <sql> INSERT INTO member (member_name, email) VALUES ('admin', 'admin@gmail.com') </sql>
+    <sql> INSERT INTO member (member_name, email) VALUES ('user', 'user@gmail.com') </sql>
   </changeSet>
 
 

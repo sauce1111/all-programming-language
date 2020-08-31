@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
 <aside
     th:fragment="sidebar"
     class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0"
@@ -7,16 +9,10 @@
   <div class="py-4 text-gray-500 dark:text-gray-400">
     <a
         class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-        href="#"
+        href="/"
     >
       All-Language-Community
     </a>
-    <a href="/oauth2/authorization/google"
-       class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" role="button">Google
-      Login</a>
-    <a href="/oauth2/authorization/naver"
-       class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" role="button">Naver
-      Login</a>
     <ul class="mt-6">
       <li class="relative px-6 py-3">
               <span
@@ -137,19 +133,36 @@
       </li>
     </ul>
     <div class="px-6 my-6">
-      <button
-          class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      <a sec:authorize="!isAuthenticated()"
+         href="/oauth2/authorization/google"
+         class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
       >
-        Log In
-      </button>
+        Google Login
+      </a>
     </div>
     <div class="px-6 my-6">
-      <button
-          class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      <a sec:authorize="!isAuthenticated()"
+          href="/oauth2/authorization/naver"
+         class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
       >
-        Create account
-        <span class="ml-2" aria-hidden="true">+</span>
-      </button>
+        Naver Login
+      </a>
+    </div>
+    <div class="px-6 my-6">
+      <a sec:authorize="!isAuthenticated()"
+         href="/login/testUserLogin"
+         class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      >
+        Test User Login
+      </a>
+    </div>
+    <div class="px-6 my-6">
+      <a sec:authorize="isAuthenticated()"
+         href="/logout"
+         class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      >
+        Logout
+      </a>
     </div>
   </div>
 </aside>

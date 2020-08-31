@@ -130,3 +130,7 @@ bin/
 
 # oauth 설정 파일
 application-oauth.properties
+
+
+#Querydsl query type
+src/main/generated

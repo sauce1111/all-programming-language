@@ -1,6 +1,7 @@
 package com.tueteam.apl.domain.posts;
 
 import com.tueteam.apl.domain.BaseTimeEntity;
+import com.tueteam.apl.web.param.posts.cpp.PostsWriteParams;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,22 +25,6 @@ public class Posts extends BaseTimeEntity {
   private Long boardIdx;
   private Long writeMemberIdx;
 
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "post_idx")
-  private PostsJava postsJava;
-
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "post_idx")
-  private PostsPython postsPython;
-
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "post_idx")
-  private PostsC postsC;
-
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "post_idx")
-  private PostsCpp postsCpp;
-
   private String title;
   private String contents;
   private String attachedFile;
@@ -54,4 +39,13 @@ public class Posts extends BaseTimeEntity {
     this.contents = contents;
     this.attachedFile = attachedFile;
   }
+
+  public Posts(PostsWriteParams param) {
+    this.boardIdx = param.getBoardIdx();
+    this.writeMemberIdx = param.getWriteMemberIdx();
+    this.title = param.getTitle();
+    this.contents = param.getContents();
+    this.attachedFile = param.getAttachedFile();
+  }
+
 }

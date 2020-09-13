@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+  logicalFilePath="changelog-member">
+
+  <changeSet author="bryu" id="posts.data.insert.200914">
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','1','제목1','내용입니다1','100','test1', date_add(now(), interval -1 year), date_add(now(), interval -1 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','1','제목2','내용입니다2','99','test2', date_add(now(), interval -2 year), date_add(now(), interval -2 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','1','제목3','내용입니다3','98','test3', date_add(now(), interval -3 year), date_add(now(), interval -3 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','1','제목4','내용입니다4','80','test4', date_add(now(), interval -4 year), date_add(now(), interval -4 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','1','제목5','내용입니다5','70','test5', date_add(now(), interval -5 year), date_add(now(), interval -5 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','C++ 언어의 개요','C++ 언어의 개요','60','test6', date_add(now(), interval -6 year), date_add(now(), interval -6 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','C++ 프로그램의 작성 및 빌드','C++ 프로그램의 작성 및 빌드','50','test7', date_add(now(), interval -7 year), date_add(now(), interval -7 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','C++ 프로그래밍 첫걸음','C++ 프로그래밍 첫걸음','10','test8', date_add(now(), interval -8 year), date_add(now(), interval -8 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','키워드와 식별자','키워드와 식별자','9','test9', date_add(now(), interval -9 year), date_add(now(), interval -9 year))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','기본 자료형 및 상수와 변수','기본 자료형 및 상수와 변수','8','test10', date_add(now(), interval -1 minute), date_add(now(), interval -1 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','연산자','연산자','7','test11', date_add(now(), interval -2 minute), date_add(now(), interval -2 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','자료형의 변환','자료형의 변환','6','test12', date_add(now(), interval -3 minute), date_add(now(), interval -3 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','흐름제어 구문','흐름제어 구문','5','test13', date_add(now(), interval -4 minute), date_add(now(), interval -4 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','구조체와 클래스','구조체와 클래스','4','test14', date_add(now(), interval -5 minute), date_add(now(), interval -5 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','배열, 포인터, 참조','배열, 포인터, 참조','3','test15', date_add(now(), interval -6 minute), date_add(now(), interval -6 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','함수의 정의와 호출','함수의 정의와 호출','2','test16', date_add(now(), interval -7 minute), date_add(now(), interval -7 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','인수의 전달','인수의 전달','1','test17', date_add(now(), interval -8 minute), date_add(now(), interval -8 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','함수의 다중정의','함수의 다중정의','2','test18', date_add(now(), interval -9 minute), date_add(now(), interval -9 minute))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','inline 함수','inline 함수','3','test19', date_add(now(), interval -1 second), date_add(now(), interval -1 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','객체지향 프로그래밍의 주요 개념','객체지향 프로그래밍의 주요 개념','4','test20', date_add(now(), interval -2 second), date_add(now(), interval -2 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','클래스 선언과 객체 정의','클래스 선언과 객체 정의','5','test21', date_add(now(), interval -3 second), date_add(now(), interval -3 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','생성자와 소멸자','생성자와 소멸자','6','test22', date_add(now(), interval -4 second), date_add(now(), interval -4 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','생성자의 종류','생성자의 종류','7','test23', date_add(now(), interval -5 second), date_add(now(), interval -5 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','static 데이터 멤버와 static 멤버함수','static 데이터 멤버와 static 멤버함수','8','test24', date_add(now(), interval -6 second), date_add(now(), interval -6 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','클래스의 활용','클래스의 활용','9','test25', date_add(now(), interval -7 second), date_add(now(), interval -7 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','연산자 다중정의란?','연산자 다중정의란?','10','test26', date_add(now(), interval -8 second), date_add(now(), interval -8 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','단항 연산자의 다중정의','단항 연산자의 다중정의','11','test27', date_add(now(), interval -9 second), date_add(now(), interval -9 second))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','이항 산술 연산자 및 관계 연산자의 다중정의','이항 산술 연산자 및 관계 연산자의 다중정의','12','test28', date_add(now(), interval -1 day), date_add(now(), interval -1 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','스트림 입출력 연산자의 다중정의','스트림 입출력 연산자의 다중정의','13','test29', date_add(now(), interval -2 day), date_add(now(), interval -2 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','대입 및 이동 대입 연산자','대입 및 이동 대입 연산자','14','test30', date_add(now(), interval -3 day), date_add(now(), interval -3 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','연산자의 다중정의','연산자의 다중정의','15','test31', date_add(now(), interval -4 day), date_add(now(), interval -4 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','문자열의 클래스','문자열의 클래스','15','test32', date_add(now(), interval -5 day), date_add(now(), interval -5 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','자료형의 변환','자료형의 변환','15','test33', date_add(now(), interval -6 day), date_add(now(), interval -6 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','연산자 다중정의의 주의 사항','연산자 다중정의의 주의 사항','16','test34', date_add(now(), interval -7 day), date_add(now(), interval -7 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','기초 클래스와 파생 클래스','기초 클래스와 파생 클래스','16','test35', date_add(now(), interval -8 day), date_add(now(), interval -8 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','파생 클래스의 생성자 및 소멸자','파생 클래스의 생성자 및 소멸자','16','test36', date_add(now(), interval -9 day), date_add(now(), interval -9 day))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','액세스 제어','액세스 제어','17','test37', date_add(now(), interval -1 month), date_add(now(), interval -1 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','파생 클래스와 포인터','파생 클래스와 포인터','17','test38', date_add(now(), interval -2 month), date_add(now(), interval -2 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','가상함수','가상함수','17','test39', date_add(now(), interval -3 month), date_add(now(), interval -3 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','추상 클래스','추상 클래스','18','test40', date_add(now(), interval -4 month), date_add(now(), interval -4 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','다중상속','다중상속','18','test41', date_add(now(), interval -5 month), date_add(now(), interval -5 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','컨테이너 클래스와 템플릿','컨테이너 클래스와 템플릿','18','test42', date_add(now(), interval -6 month), date_add(now(), interval -6 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','클래스 템플릿','클래스 템플릿','19','test43', date_add(now(), interval -7 month), date_add(now(), interval -7 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','함수 템플릿','함수 템플릿','19','test44', date_add(now(), interval -8 month), date_add(now(), interval -8 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','표준 템플릿 라이브러리','표준 템플릿 라이브러리','19','test45', date_add(now(), interval -9 month), date_add(now(), interval -9 month))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','예외의 개념','예외의 개념','20','test46', date_add(now(), interval -1 hour), date_add(now(), interval -1 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','C++ 언어의 예외처리 체계','C++ 언어의 예외처리 체계','20','test47', date_add(now(), interval -2 hour), date_add(now(), interval -2 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','예외처리 클래스','예외처리 클래스','20','test48', date_add(now(), interval -3 hour), date_add(now(), interval -3 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','예외처리 클래스의 상속','예외처리 클래스의 상속','21','test49', date_add(now(), interval -4 hour), date_add(now(), interval -4 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','입출력 스트림의 개요','입출력 스트림의 개요','22','test50', date_add(now(), interval -5 hour), date_add(now(), interval -5 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','cin을 이용한 입력','cin을 이용한 입력','33','test51', date_add(now(), interval -6 hour), date_add(now(), interval -6 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','cout을 이용한 출력','cout을 이용한 출력','44','test52', date_add(now(), interval -7 hour), date_add(now(), interval -7 hour))</sql>
+    <sql>INSERT INTO posts(board_idx, write_member_idx, title, contents, hits, memo, created_date, modified_date) VALUES ('4','2','파일 입출력','파일 입출력','55','test53', date_add(now(), interval -8 hour), date_add(now(), interval -8 hour))</sql>
+  </changeSet>
+
+  <changeSet author="bryu" id="posts_cpp.data.insert.200914">
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test1'),'테스트','0','50','40')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test2'),'테스트','1','40','30')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test3'),'잡담','2','35','20')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test4'),'잡담','3','30','15')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test5'),'잡담','4','25','10')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test6'),'C++,C++언어의 소개','5','20','10')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test7'),'C++,C++언어의 소개','4','15','10')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test8'),'C++,C++언어의 소개','3','10','5')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test9'),'C++,C++ 언어의 기초','2','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test10'),'C++,C++ 언어의 기초','1','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test11'),'C++,C++ 언어의 기초','0','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test12'),'C++,C++ 언어의 기초','1','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test13'),'C++,C++ 언어의 기초','1','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test14'),'C++,C++ 언어의 기초','2','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test15'),'C++,C++ 언어의 기초','2','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test16'),'C++,함수','3','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test17'),'C++,함수','3','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test18'),'C++,함수','4','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test19'),'C++,함수','4','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test20'),'C++,클래스와 객체','5','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test21'),'C++,클래스와 객체','5','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test22'),'C++,클래스와 객체','4','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test23'),'C++,클래스와 객체','4','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test24'),'C++,클래스와 객체','3','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test25'),'C++,클래스와 객체','3','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test26'),'C++,연산자 다중정의','2','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test27'),'C++,연산자 다중정의','2','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test28'),'C++,연산자 다중정의','1','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test29'),'C++,연산자 다중정의','1','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test30'),'C++,연산자 다중정의','0','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test31'),'C++,연산자 다중정의','0','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test32'),'C++,연산자 다중정의','1','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test33'),'C++,연산자 다중정의','1','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test34'),'C++,연산자 다중정의','2','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test35'),'C++,상속','2','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test36'),'C++,상속','3','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test37'),'C++,상속','3','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test38'),'C++,상속','4','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test39'),'C++,상속','4','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test40'),'C++,상속','5','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test41'),'C++,상속','5','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test42'),'C++,템플릿','6','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test43'),'C++,템플릿','6','0','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test44'),'C++,템플릿','7','1','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test45'),'C++,템플릿','7','2','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test46'),'C++,예외처리','6','3','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test47'),'C++,예외처리','6','4','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test48'),'C++,예외처리','5','5','0')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test49'),'C++,예외처리','5','6','1')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test50'),'C++,입출력 스트림','4','7','2')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test51'),'C++,입출력 스트림','4','8','3')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test52'),'C++,입출력 스트림','3','9','4')</sql>
+    <sql>INSERT INTO posts_cpp(post_idx, tag, reply_count, like_count, dislike_count) VALUES ((SELECT post_idx FROM posts WHERE memo = 'test53'),'C++,입출력 스트림','3','10','5')</sql>
+  </changeSet>
+
+
+</databaseChangeLog>

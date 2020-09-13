@@ -16,9 +16,6 @@ public class PostsJava{
   private Long postIdx;
   private String javaCode;
 
-  @OneToOne(mappedBy = "postsJava")
-  private Posts posts;
-
   public PostsJava(Long postIdx, String javaCode) {
     this.postIdx = postIdx;
     this.javaCode = javaCode;

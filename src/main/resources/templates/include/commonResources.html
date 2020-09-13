@@ -22,11 +22,26 @@
         crossorigin="anonymous"
   />  <!--폰트어썸 아이콘 관련-->
 
-  <link rel="stylesheet" href="/css/common.css"/> <!-- 공통 적용 css -->
+  <link rel="stylesheet" href="/css/common.css"/> <!-- 공통 css -->
   <!--css-->
 
   <!--js-->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <!--js-->
 
+  <script src="/js/common.js"></script> <!-- 공통 js-->
+
+  <script th:inline="javascript">
+
+      var loginUser = [[${session.loginUser}]];
+      var recordCountPerPage = [[${param.recordCountPerPage}]];
+
+
+      var form;
+      $(function(){
+        form = $('#mainForm');
+      });
+
+  </script>
+  <!--js-->
 </resource>
+</html>

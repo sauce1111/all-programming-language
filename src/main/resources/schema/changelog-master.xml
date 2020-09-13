@@ -13,6 +13,9 @@
 	<include file="changelog-posts_java.xml" relativeToChangelogFile="true" />
 	<include file="changelog-posts_python.xml" relativeToChangelogFile="true" />
 	<include file="changelog-posts_c.xml" relativeToChangelogFile="true" />
+
 	<include file="changelog-posts_cpp.xml" relativeToChangelogFile="true" />
+	<include file="changelog-posts_cpp.v2.xml" relativeToChangelogFile="true" />
+	<include file="changelog-posts_cpp.data.xml" relativeToChangelogFile="true" />
 
 </databaseChangeLog>

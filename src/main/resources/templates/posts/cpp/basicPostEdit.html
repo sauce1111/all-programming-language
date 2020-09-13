@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+<head>
+
+  <!-- commonResources -->
+  <th:block th:replace="include/commonResources :: commonResources" />
+  <!-- commonResources -->
+
+  <script src="/js/posts/cpp/basicPostEdit.js"></script>
+
+</head>
+
+<body>
+
+<th:block th:replace="include/mainFormHeader :: mainFormHeader" />
+<input type="hidden" name="boardIdx" value="4" />
+<input type="hidden" name="writeMemberIdx" th:value="${session.loginUser.memberIdx}"/>
+<input type="hidden" name="attachedFile" value="" />
+
+<div
+    class="flex h-screen bg-gray-50 dark:bg-gray-900"
+    :class="{ 'overflow-hidden': isSideMenuOpen }"
+>
+
+  <!-- sidebar -->
+  <aside th:replace="include/sidebar :: sidebar"/>
+  <!-- sidebar -->
+
+  <div class="flex flex-col flex-1 w-full"
+  >
+    <!-- header -->
+    <header th:replace="include/header :: header"/>
+    <!-- header -->
+
+    <main class="h-full overflow-y-auto">
+      <div class="container px-6 mb-8 mx-auto grid">
+
+        <h2
+            class="my-6 text-sm text-gray-500 dark:text-gray-200"
+        >
+          게시글 등록
+        </h2>
+
+        <div
+            class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800"
+        >
+          <label class="block text-sm">
+            <input
+                class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                name="title"
+                placeholder="제목을 입력하세요."
+            />
+          </label>
+
+          <label class="block text-sm">
+            <input
+                class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                name="tag"
+                placeholder="태그를 입력하세요."
+            />
+          </label>
+
+
+          <label class="block mt-4 text-sm">
+            <textarea
+                class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-textarea focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
+                rows="12"
+                name="contents"
+                placeholder="내용을 입력하세요."
+            ></textarea>
+          </label>
+
+        </div>
+
+
+        <div class="text-center">
+          <a href="#"
+              class="writePost inline-block justify-center mx-3 my-6 w-16 text-xs px-3 py-1 font-semibold leading-5 text-white transition-colors duration-150 border border-transparent rounded-md text-gray-100 bg-gray-800 hover:bg-gray-900">
+            확인
+          </a>
+          <a href="/posts/cpp/basicPostList"
+              class="inline-block justify-center mx-3 my-6 w-16 text-xs px-3 py-1 font-semibold leading-5 text-white transition-colors duration-150 border border-transparent rounded-md text-gray-100 bg-gray-800 hover:bg-gray-900"
+          >
+            취소
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<th:block th:replace="include/mainFormFooter :: mainFormFooter" />
+
+</body>
+</html>

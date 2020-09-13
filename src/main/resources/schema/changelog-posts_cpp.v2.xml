@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+  logicalFilePath="changelog-member">
+
+  <!--게시글(C++)-->
+  <changeSet author="bryu" id="posts_cpp.drop">
+    <sql>DROP TABLE posts_cpp</sql>
+  </changeSet>
+
+  <changeSet author="bryu" id="posts_cpp.create.200914">
+    <sql>
+      CREATE TABLE posts_cpp (
+        post_idx          BIGINT                           PRIMARY KEY,   <!--게시글번호-->
+        reply_count          INT          DEFAULT 0           NOT NULL,   <!--댓글 수-->
+        like_count           INT          DEFAULT 0           NOT NULL,   <!--좋아요 수-->
+        dislike_count        INT          DEFAULT 0           NOT NULL,   <!--싫어요 수-->
+        tag              VARCHAR(200)                                     <!--태그-->
+      )
+      ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    </sql>
+  </changeSet>
+
+
+</databaseChangeLog>

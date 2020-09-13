@@ -37,5 +37,11 @@
     </sql>
   </changeSet>
 
+  <changeSet author="bryu" id="posts.add.row_memo.200914">
+    <sql>
+      ALTER TABLE posts ADD COLUMN memo VARCHAR(100) <!--메모-->
+    </sql>
+  </changeSet>
+
 
 </databaseChangeLog>

@@ -13,18 +13,18 @@ public class BoardCPostsSaveReqDto {
     private Long writeMemberIdx;
     //    private String memberName;
     private String title;
-    private String content;
+    private String contents;
     private String attachedFile;
 
     @Builder
     public BoardCPostsSaveReqDto(Long boardIdx, Long memberIdx, String memberName, String title,
-        String content,
+        String contents,
         String attachedFile) {
         this.boardIdx = boardIdx;
         this.writeMemberIdx = memberIdx;
         //    this.memberName = memberName;
         this.title = title;
-        this.content = content;
+        this.contents = contents;
         this.attachedFile = attachedFile;
     }
 
@@ -33,7 +33,7 @@ public class BoardCPostsSaveReqDto {
             .boardIdx(3L)
             .memberIdx(writeMemberIdx)
             .title(title)
-            .contents(content)
+            .contents(contents)
             .attachedFile(attachedFile)
             .build();
     }

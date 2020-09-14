@@ -11,7 +11,7 @@ var boardC = {
             writeMemberIdx: $('#writeMemberIdx').val(),
             title: $('#title').val(),
             memberName: $('#memberName').val(),
-            content: $('#content').val()
+            content: $('#contents').val()
         };
 
         $.ajax({

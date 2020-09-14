@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+<head>
+
+  <!-- commonResources -->
+  <th:block th:replace="include/commonResources :: commonResources" />
+  <!-- commonResources -->
+
+  <script src="/js/posts/java/basicPostList.js"></script>
+
+</head>
+
+<body>
+
+<th:block th:replace="include/mainFormHeader :: mainFormHeader" />
+
+<input th:value="${param.pageSize}" type="hidden" name="pageSize" value="" />
+<input th:value="${param.currentPageNo}" type="hidden" name="currentPageNo" value="" />
+<input th:value="${param.sortNo}" type="hidden" name="sortNo" value="" />
+
+<div
+    class="flex h-screen bg-gray-50 dark:bg-gray-900"
+    :class="{ 'overflow-hidden': isSideMenuOpen }"
+>
+
+  <!-- sidebar -->
+  <aside th:replace="include/sidebar :: sidebar"/>
+  <!-- sidebar -->
+
+  <div class="flex flex-col flex-1 w-full">
+
+    <!-- header -->
+    <header th:replace="include/header :: header"/>
+    <!-- header -->
+
+    <main class="h-full overflow-y-auto">
+      <div class="container px-6 mb-8 mx-auto grid">
+
+        <span
+            class="mt-8 text-lg font-semibold text-gray-700 dark:text-gray-200"
+        >
+          Java 자유게시판
+        </span>
+
+        <div class="grid sm:grid-cols-9 mt-4">
+          <span class="my-2 col-span-3 text-left">
+            <a href="#none"
+               class="sort mr-4 text-sm text-gray-500">
+              최신순
+            </a>
+            <a href="#none"
+               class="sort mr-4 text-sm text-gray-500">
+              조회순
+            </a>
+            <a href="#none"
+               class="sort mr-4 text-sm text-gray-500">
+              좋아요순
+            </a>
+            <a href="#none"
+               class="sort mr-4 text-sm text-gray-500">
+              댓글순
+            </a>
+          </span>
+
+          <span class="col-span-3"></span>
+
+          <span class="my-2 col-span-3 text-right text-xs">
+            <span
+                class="mt-2 inline-flex items-center text-gray-600 dark:text-gray-400"
+            >
+              <input type="radio"
+                     class="ml-4 text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple"
+                     name="recordCountPerPage" id="count-10"
+                     value="10"
+                     checked
+              />
+              <label for="count-10" class="ml-2">10개씩 보기</label>
+              <input type="radio"
+                     class="ml-4 text-purple-600 form-radio focus:border-purple-400 focus:outline-none focus:shadow-outline-purple"
+                     name="recordCountPerPage" id="count-20"
+                     value="20"
+              />
+              <label for="count-20" class="ml-2">20개씩 보기</label>
+            </span>
+          </span>
+        </div>
+
+
+        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+          <div class="w-full overflow-x-auto">
+            <table class="w-full whitespace-no-wrap">
+              <colgroup>
+                <col style="width:*"/>
+                <col style="width:12%"/>
+                <col style="width:12%"/>
+                <col style="width:12%"/>
+              </colgroup>
+              <tbody
+                  class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800"
+              >
+              <tr th:if="${#lists.size(postsJavaList.getContent()) == 0}"
+                  class="text-gray-700">
+                <td colspan="4" class="px-4 py-3 text-bold text-sm text-center">
+                  게시글이 존재하지 않습니다.
+                </td>
+              </tr>
+              <tr th:each="post : ${postsJavaList}"
+                  class="text-gray-700">
+                <td class="px-4 py-3">
+                  <div class="flex items-center text-sm">
+                    <div>
+                      <p class="font-semibold">
+                        <th:block th:text="${post.title}" />
+                        <th:block th:each="tag : ${#strings.listSplit(post.tag, ',')}">
+                          <span
+                              th:if="${tag}=='Java'" th:text="${tag}"
+                              class="posts_java text-xs ml-2 mr-2 px-2 py-1 font-semibold leading-tight rounded-full"
+                          >
+                          </span>
+                          <span
+                              th:if="${tag}!='Java'" th:text="${tag}"
+                              class="text-xs mr-2 px-2 py-1 leading-tight text-gray-700 bg-gray-100 rounded-full"
+                          >
+                          </span>
+                        </th:block>
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-xs">
+                  <div class="flex items-center text-sm">
+                    <div
+                        class="relative hidden w-8 h-8 mr-3 rounded-full md:block"
+                    >
+                      <img class="object-cover w-full h-full rounded-full" src="/img/user.png" alt="" loading="lazy">
+                      <div
+                          class="absolute inset-0 rounded-full shadow-inner"
+                          aria-hidden="true"
+                      ></div>
+                    </div>
+                    <th:block th:text="${post.memberName}"></th:block>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-xs">
+                  <i class="fas fa-comments ml-2"></i>
+                  <th:block th:text="${post.replyCount}" />
+                  <i class="fas fa-thumbs-up ml-2"></i>
+                  <th:block th:text="${post.likeCount}" />
+                  <i class="fas fa-thumbs-down ml-2"></i>
+                  <th:block th:text="${post.dislikeCount}" />
+                  <i class="fas fa-eye ml-2"></i>
+                  <th:block th:text="${post.hits}" />
+                </td>
+                <td class="px-4 py-3 text-xs">
+                  <th:block th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm:ss')}" />
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!--pagination-->
+          <th:block th:replace="include/posts/java/pagination :: pagination" />
+          <!--pagination-->
+
+        </div>
+
+        <div class="grid sm:grid-cols-9">
+          <span class="mt-4 col-span-4">
+            <span
+                class="relative w-50 max-w-xl focus-within:text-purple-500 float-left md:invisible lg:visible"
+            >
+              <a class="absolute inset-y-0 flex items-center pl-2"
+                 href="#none"
+                 style="right:10px;"
+                 onclick="fnSearchByKeyword()"
+              >
+                <svg
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                  <path
+                      fill-rule="evenodd"
+                      d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                      clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+              <input th:value="${param.postKeyword}"
+                     class="w-full pr-2 text-sm text-gray-700 placeholder-gray-400 bg-white border-gray-300 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+                     type="text"
+                     name="postKeyword"
+                     placeholder="검색"
+              />
+            </span>
+          </span>
+
+          <span class="col-span-3"></span>
+
+          <span class="col-span-2">
+            <a href="/posts/java/basicPostWrite"
+               class="mt-4 float-right w-16 text-xs px-3 py-1 font-semibold leading-5 text-white transition-colors duration-150 border border-transparent rounded-md text-gray-100 bg-gray-800 hover:bg-gray-900">
+              글쓰기
+            </a>
+          </span>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<th:block th:replace="include/mainFormFooter :: mainFormFooter" />
+
+</body>
+</html>

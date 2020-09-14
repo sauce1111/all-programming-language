@@ -3,6 +3,7 @@ package com.tueteam.apl.web;
 import com.tueteam.apl.config.auth.dto.SessionMember;
 import com.tueteam.apl.service.MemberService;
 import com.tueteam.apl.service.PostsService;
+import com.tueteam.apl.web.dto.BoardCListResponseDto;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -28,8 +29,8 @@ public class IndexController {
         SessionMember member = (SessionMember) httpSession.getAttribute("member");
         if (member != null) {
             memberService.updateRoleMember(member);
-            BoardCListResponseDto boardCAllList = postsService.findByboardCAll();
-            model
+//            BoardCListResponseDto boardCAllList = postsService.findByboardCAllDesc();
+//            model.addAttribute("posts", boardCAllList)
         }
         return "board-c";
     }

@@ -48,4 +48,8 @@ public class Member extends BaseTimeEntity {
         return this.role.getKey();
     }
 
+    public void updateRoleMember(Role roleMember) {
+        this.role = roleMember;
+    }
+
 }

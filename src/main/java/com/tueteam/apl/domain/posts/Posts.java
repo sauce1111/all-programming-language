@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.joda.time.DateTime;
@@ -47,6 +48,7 @@ public class Posts extends BaseTimeEntity {
   private int statusCode;
   private DateTime deletedDate;
 
+  @Builder
   public Posts(Long boardIdx, Long memberIdx, String title, String contents, String attachedFile) {
     this.boardIdx = boardIdx;
     this.writeMemberIdx = memberIdx;
